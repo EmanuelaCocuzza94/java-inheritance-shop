@@ -1,5 +1,7 @@
 package org.lessons.java.shop;
 
+import java.util.Random;
+
 /*Creare la classe Prodotto che gestisce i prodotti dello shop.
 Un prodotto è caratterizzato da:
 - codice (numero intero)
@@ -25,12 +27,12 @@ public class Prodotto {
 	protected double prezzo;
 	protected double iva;
 	
-	Prodotto(int codice, String nome, String marca, double prezzo, double iva){
-		this.codice = codice;
-		this.nome = nome;
-		this.marca = marca; 
-		this.prezzo = prezzo;
-		this.iva = iva;
+	Prodotto(String nome, String marca, double prezzo, double iva){
+		this.setCodice();
+		this.setNome(nome);
+		this.setMarca(marca); 
+		this.setPrezzo(prezzo);
+		this.setIva(iva);
 	}
 
 	
@@ -54,20 +56,25 @@ public class Prodotto {
 		return this.iva;
 	}
 	
+	public void setCodice() {
+		Random ran = new Random();
+		this.codice = ran.nextInt(10000);
+	}
+	
 	public void setNome(String inputNome) {
 		 this.nome = inputNome;
 	}
 	
 	public void setMarca(String inputMarca) {
-		 this.nome = inputMarca;
+		 this.marca = inputMarca;
 	}
 
-	public void setPrezzo(String inputPrezzo) {
-		 this.nome = inputPrezzo;
+	public void setPrezzo(double inputPrezzo) {
+		 this.prezzo = inputPrezzo;
 	}
 	
-	public void setIva(String inputIva) {
-		 this.nome = inputIva;
+	public void setIva(double inputIva) {
+		 this.iva = inputIva;
 	}
 	
 

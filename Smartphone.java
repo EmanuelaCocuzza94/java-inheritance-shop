@@ -1,5 +1,7 @@
 package org.lessons.java.shop;
 
+import java.util.Random;
+
 /*Lo shop gestisce diversi tipi di prodotto:
 - Smarphone, caratterizzati anche dal codice IMEI e dalla quantità di memoria
 - Televisori, caratterizzati dalle dimensioni e dalla proprietà di essere smart oppure no
@@ -8,23 +10,30 @@ Utilizzate l’ereditarietà per riutilizzare il codice di Prodotto nella stesur
 
 public class Smartphone extends Prodotto {
 	
-	private String codiceImei;
+	private int codiceImei;
 	private String memoria;
 
-	public Smartphone (int codice, String nome, String marca, double prezzo, double iva, String codiceImei, String memoria) {
-		super(codice, nome, marca, prezzo, iva);
+	public Smartphone (String nome, String marca, double prezzo, double iva, String memoria) {
+		super(nome, marca, prezzo, iva);
 		// TODO Auto-generated constructor stub
-		this.codiceImei = "IMEI";
+		this.setCodiceImei();
 		this.memoria = memoria; 
 	}
 	
-	private String getCodiceImei() {
+	private int getCodiceImei() {
 		return this.codiceImei;
+	}
+	
+	private void setCodiceImei() {
+		Random ran = new Random();
+		this.codiceImei = ran.nextInt(10000);
 	}
 	
 	private String getMemoria() {
 		return this.memoria;
 	}
+	
+	
 	
 	@Override
     public String toString() {
@@ -34,6 +43,7 @@ public class Smartphone extends Prodotto {
                 "memoria='" + this.getMemoria() + '\'' + '\n' +
                 "codiceimei='" + this.getCodiceImei() + '\'' + '\n' +
                 "iva='" + this.getIva() + '\'' + '\n' +
+                "codice='" + this.getCodice() + '\'' + '\n' +
                 "prezzo=" + this.getPrezzo() + '\n' + '}';
     }
 	

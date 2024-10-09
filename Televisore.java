@@ -11,8 +11,8 @@ public class Televisore extends Prodotto {
 	private double dimensione; 
 	private boolean is_smart; 
 
-	public Televisore (int codice, String nome, String marca, double prezzo, double iva, double dimensione, boolean is_smart) {
-		super(codice, nome, marca, prezzo, iva);
+	public Televisore (String nome, String marca, double prezzo, double iva, double dimensione, boolean is_smart) {
+		super(nome, marca, prezzo, iva);
 		// TODO Auto-generated constructor stub
 		this.dimensione = dimensione;
 		this.is_smart = is_smart;
@@ -35,6 +35,7 @@ public class Televisore extends Prodotto {
                 "dimensione='" + this.getDimensione() + '\'' + '\n' +
                 "smart='" + this.getSmart() + '\'' + '\n' +
                 "iva='" + this.getIva() + '\'' + '\n' +
+                "codice='" + this.getCodice() + '\'' + '\n' +
                 "prezzo=" + this.getPrezzo() + '\n' + '}';
     }
 

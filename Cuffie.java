@@ -11,8 +11,8 @@ public class Cuffie extends Prodotto{
 	private String colore;
 	private String tipologia;
 
-	public Cuffie(int codice, String nome, String marca, double prezzo, double iva, String colore, String tipologia) {
-		super(codice, nome, marca, prezzo, iva);
+	public Cuffie(String nome, String marca, double prezzo, double iva, String colore, String tipologia) {
+		super(nome, marca, prezzo, iva);
 		// TODO Auto-generated constructor stub
 		this.colore = colore;
 		this.tipologia= tipologia;
@@ -34,6 +34,7 @@ public class Cuffie extends Prodotto{
                 "colore='" + this.getColore() + '\'' + '\n' +
                 "tipologia='" + this.getTipologia() + '\'' + '\n' +
                 "iva='" + this.getIva() + '\'' + '\n' +
+                "codice='" + this.getCodice() + '\'' + '\n' +
                 "prezzo=" + this.getPrezzo() + '\n' + '}';
     }
 
